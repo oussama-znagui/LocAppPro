@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Lease extends Model
 {
     use HasFactory;
+    public function apartment()
+    {
+        return $this->belongsTo(Apartment::class);
+    }
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
 }
