@@ -29,7 +29,9 @@ class ApartmentController extends Controller
      */
     public function store(StoreApartmentRequest $request)
     {
-        //
+        
+        Apartment::create($request->all());
+        return redirect('/dashboard')->with('success', 'Product created successfully.');
     }
 
     /**

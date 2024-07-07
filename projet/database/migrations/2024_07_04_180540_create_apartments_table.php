@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('admin_id')->constrained();
             $table->string("adresse");
             $table->decimal('size');
             $table->integer('rooms');
             $table->integer('floor');
             $table->decimal('rent');
-            $table->date('availability');
+            $table->date('availability')->nullable();
 
 
             $table->timestamps();

@@ -7,7 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
+
     use HasFactory;
+
+    protected $fillable = [
+        'adresse',
+        'size',
+        'rooms',
+        'floor',
+        'rent',
+        
+    ];
     public function leases()
     {
         return $this->hasMany(Lease::class);
