@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('admin_id')->constrained();
+          
             $table->string("adresse");
             $table->decimal('size');
             $table->integer('rooms');
